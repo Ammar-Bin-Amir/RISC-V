@@ -1,0 +1,9 @@
+li x5,5
+addi ra,x0,12
+li x6,1
+jal ra,jump
+jal ra,end
+jump:
+ret
+end:
+nop

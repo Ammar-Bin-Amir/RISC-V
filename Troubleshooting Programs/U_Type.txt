@@ -1,0 +1,2 @@
+auipc x5,5
+lui x6,5
