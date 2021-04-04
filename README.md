@@ -105,6 +105,6 @@ FF5FF0EF
 
 ## **Circuit Snapshot**
 
-![RV32I Logisim Snapshot](RV32I-Single-Cycle.png)
+![RV32I Logisim Snapshot](RV32I_Single_Cycle.png)
 
 >_The best among you are those who bring greatest benefits to many other._
