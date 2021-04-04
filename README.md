@@ -81,7 +81,7 @@ This circuit already possesses data in the ROM.
 
 This program stores number '1' at zeroth address in data memory i.e., RAM, then according to the loop, the value is updated by an increment of one that means each time the next value is rewrite upon the previous value with addition of one on the same address.
 
-_This is the code of instruction._
+_(This is the code of instruction.)_
 
 ```
 addi x5,x0,0	# Initialization
@@ -92,7 +92,7 @@ lw x6,0x0(x0)
 jal ra,loop	# Iteration
 ```
 
-_ This is the hex code of above program._
+_(This is the hex code of above program.)_
 
 ```
 v2.0 raw
@@ -105,6 +105,6 @@ FF5FF0EF
 
 ## **Circuit Snapshot**
 
-
+![RV32I Logisim Snapshot](RV32I-Single-Cycle.png)
 
 >_The best among you are those who bring greatest benefits to many other._
