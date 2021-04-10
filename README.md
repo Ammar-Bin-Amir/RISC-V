@@ -67,9 +67,6 @@ The initial step before coming to the designing of the circuit, the basic knowle
 29)	auipc
 30)	lui
 31)	jal
-32)	li
-33)	ret
-34)	nop
 
 ## **Program Execution**
 
