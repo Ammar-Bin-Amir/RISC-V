@@ -1,9 +1,0 @@
-addi x5,t0,15
-andi x6,t0,10
-ori x7,t0,10
-xori x8,t0,10
-slli x9,t0,2
-srli x10,t0,2
-slti x11,t0,30
-sltiu x12,t0,-30
-srai x13,t0,20
