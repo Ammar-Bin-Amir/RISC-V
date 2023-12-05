@@ -67,7 +67,7 @@ The initial step before coming to the designing of the circuit, the basic knowle
 
 ## **Program Execution**
 
-To check whether the circuit is working or not! First of all, a few codes of line (instructions) are typed on online Venus simulator. After confirmation, the Dump option of the simulator is clicked that copies the hex address of each instruction. Then, open a notepad file and type a header statement v2.0 raw at the top of the file. Now copy the hex address and remove 0x0 from each address and save the file in abc.mem format which would be enabled by selecting All Files option. The last step is to upload the code into ROM i.e., load data into ROM. This is performed by right clicking on the ROM, in which an option Load Image is selected that allows us to choose the file to be loaded.
+To check whether the circuit is working or not! First of all, a few codes of line (instructions) are typed on online Venus simulator. After confirmation, the Dump option of the simulator is clicked that copies the hex address of each instruction. Then, open a notepad file and type a header statement **v2.0 raw** at the top of the file. Now copy the hex address and remove **0x0** from each address and save the file in abc.mem format which would be enabled by selecting **All Files** option. The last step is to upload the code into ROM i.e., load data into ROM. This is performed by right clicking on the ROM, in which an option **Load Image** is selected that allows us to choose the file to be loaded.
 
 ## **Sample Program**
 
