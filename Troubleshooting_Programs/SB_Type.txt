@@ -1,0 +1,20 @@
+addi x5,zero,10
+addi x6,zero,-15
+beq x5,x6,label_1
+bne x5,x6,label_2
+label_1:
+addi x7,zero,1
+label_2:
+addi x8,zero,1
+blt x5,x6,label_3
+bge x5,x6,label_4
+label_3:
+addi x9,zero,1
+label_4:
+addi x10,zero,1
+bltu x5,x6,label_5
+bgeu x5,x6,label_6
+label_5:
+addi x10,zero,1
+label_6:
+addi x11,zero,1
