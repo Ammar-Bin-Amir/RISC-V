@@ -1,0 +1,8 @@
+# This program stores number '1' at zeroth address in data memory i.e. RAM, then according to the loop, the value is updated by an increment of one that means each time the next value is rewrite upon the previous value with addition of one on the same address.
+
+addi x5,x0,0	# Initialization
+loop:
+addi x5,x5,1	# Increment
+sw x5,0x0(x0)
+lw x6,0x0(x0)
+jal ra,loop		# Iteration
