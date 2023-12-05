@@ -99,6 +99,6 @@ FF5FF0EF
 
 ## **Circuit Snapshot**
 
-![Snapshot of RV32I Single Cycle CPU Ciruit on Logisim](RV32I_Single_Cycle.png)
+![Snapshot of RV32I Single Cycle CPU Ciruit on Logisim](RV32I_Single_Cycle_CPU.png)
 
 >_The best among you are those who bring greatest benefits to many other._
