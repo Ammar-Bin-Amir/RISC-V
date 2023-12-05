@@ -1,16 +1,13 @@
-# RV32I Single Cycle
-
+# RV32I Single Cycle CPU
 
 ## **Description**
 
-This repository is based RV32I Single Cycle Processor designed on Logisim Simulator which elaborates the RISC-V Data Path of each supported instruction about how they are executed from ROM to RAM.
+This repository is based on RV32I Single Cycle Processor designed on Logisim Simulator which elaborates the RISC-V Data Path of each supported instruction about how they are executed from ROM to RAM.
 
 ## **Pre-requisites**
 
 - [Logisim](http://www.cburch.com/logisim/download.html) Software
 - [Venus](https://venus.cs61c.org/) Simulator
-- [GitHub](https://github.com/)
-- [Git](https://git-scm.com/downloads)
 
 ## **Instructor**
 
@@ -28,7 +25,7 @@ This repository is based RV32I Single Cycle Processor designed on Logisim Simula
 - Immediate Selector
 - Branch Selector
 - ALU
-- ROM
+- RAM
 
 ## **Circuit Development**
 
@@ -102,6 +99,6 @@ FF5FF0EF
 
 ## **Circuit Snapshot**
 
-![RV32I Logisim Snapshot](RV32I_Single_Cycle.png)
+![Snapshot of RV32I Single Cycle CPU Ciruit on Logisim](RV32I_Single_Cycle.png)
 
 >_The best among you are those who bring greatest benefits to many other._
