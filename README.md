@@ -6,7 +6,7 @@ This repository is based on RV32I Single Cycle Processor designed on Logisim Sim
 
 ## **Pre-requisites**
 
-- [Logisim](http://www.cburch.com/logisim/download.html) Software
+- [Logisim](http://www.cburch.com/logisim/download.html) Simulator
 - [Venus](https://venus.cs61c.org/) Simulator
 
 ## **Instructor**
