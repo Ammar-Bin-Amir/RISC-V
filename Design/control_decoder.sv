@@ -47,8 +47,8 @@ module control_decoder (
     assign immediate_selector[1] = ((~i_type_lw) & (~i_type_addi) & (~i_type_jalr) & (~u_type_auipc) & (~u_type_lui));
 
     // Next PC Selector
-    assign next_pc_selector[0] = (sb_type | uj_type);
-    assign next_pc_selector[1] = (i_type_jalr | uj_type);
+    assign next_pc_selector[0] = (i_type_jalr | uj_type);
+    assign next_pc_selector[1] = (sb_type | uj_type);
 
     // ALU Opcode Controller
     logic [2:0] alu_opcode_controller;
