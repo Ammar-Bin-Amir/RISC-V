@@ -43,8 +43,8 @@ module control_decoder (
     assign alu_operand_b_selector = (i_type_lw | i_type_addi | i_type_jalr | s_type | u_type_auipc | u_type_lui);
 
     // Immediate Selector
-    assign immediate_selector[0] = ((~i_type_lw) | (~i_type_addi) | (~i_type_jalr) | (~s_type));
-    assign immediate_selector[1] = ((~i_type_lw) | (~i_type_addi) | (~i_type_jalr) | (~u_type_auipc) | (~u_type_lui));
+    assign immediate_selector[0] = ((~i_type_lw) & (~i_type_addi) & (~i_type_jalr) & (~s_type));
+    assign immediate_selector[1] = ((~i_type_lw) & (~i_type_addi) & (~i_type_jalr) & (~u_type_auipc) & (~u_type_lui));
 
     // Next PC Selector
     assign next_pc_selector[0] = (sb_type | uj_type);
