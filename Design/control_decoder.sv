@@ -57,49 +57,50 @@ module control_decoder (
     assign alu_opcode_controller[1] = (i_type_addi | i_type_jalr | u_type_lui | uj_type);
     assign alu_opcode_controller[2] = (i_type_lw | i_type_jalr | u_type_auipc | uj_type);
 
-    logic alu_operations_selector_bit_0_and_gate_1;
-    logic alu_operations_selector_bit_0_and_gate_2;
-    logic alu_operations_selector_bit_0_and_gate_3;
-    
-    assign alu_operations_selector_bit_0_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_3[2]) & func_3[1] & func_3[0]);
-    assign alu_operations_selector_bit_0_and_gate_2 = ((~alu_opcode_controller[2]) & func_7_bit_6 & (~func_3[1]) & func_3[0]);
-    assign alu_operations_selector_bit_0_and_gate_3 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
+    // ALU Operations Selector
+    logic alu_operations_selector_bit_3_and_gate_1;
+    logic alu_operations_selector_bit_3_and_gate_2;
+    logic alu_operations_selector_bit_3_and_gate_3;
 
-    logic alu_operations_selector_bit_1_and_gate_1;
-    logic alu_operations_selector_bit_1_and_gate_2;
-    logic alu_operations_selector_bit_1_and_gate_3;
-    logic alu_operations_selector_bit_1_and_gate_4;
-
-    assign alu_operations_selector_bit_1_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_7_bit_6) & (~func_3[1]) & func_3[0]);
-    assign alu_operations_selector_bit_1_and_gate_2 = ((~alu_opcode_controller[2]) & (~alu_opcode_controller[0]) & (~func_3[2]) & func_3[1] & (~func_3[0]));
-    assign alu_operations_selector_bit_1_and_gate_3 = ((~alu_opcode_controller[2]) & func_3[2] & (~func_3[1]) & (~func_3[0]));
-    assign alu_operations_selector_bit_1_and_gate_4 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
+    assign alu_operations_selector_bit_3_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_3[2]) & func_3[1] & func_3[0]);
+    assign alu_operations_selector_bit_3_and_gate_2 = ((~alu_opcode_controller[2]) & func_7_bit_6 & (~func_3[1]) & func_3[0]);
+    assign alu_operations_selector_bit_3_and_gate_3 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
 
     logic alu_operations_selector_bit_2_and_gate_1;
     logic alu_operations_selector_bit_2_and_gate_2;
     logic alu_operations_selector_bit_2_and_gate_3;
     logic alu_operations_selector_bit_2_and_gate_4;
 
-    assign alu_operations_selector_bit_2_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_7_bit_6) & func_3[2] & func_3[0]);
-    assign alu_operations_selector_bit_2_and_gate_2 = ((~alu_opcode_controller[2]) & (~func_7_bit_6) & func_3[2] & func_3[0]);
-    assign alu_operations_selector_bit_2_and_gate_3 = ((~alu_opcode_controller[2]) & func_3[2] & func_3[1]);
-    assign alu_operations_selector_bit_2_and_gate_4 = (alu_opcode_controller[2] & alu_opcode_controller[1]);
+    assign alu_operations_selector_bit_2_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_7_bit_6) & (~func_3[1]) & func_3[0]);
+    assign alu_operations_selector_bit_2_and_gate_2 = ((~alu_opcode_controller[2]) & (~alu_opcode_controller[0]) & (~func_3[2]) & func_3[1] & (~func_3[0]));
+    assign alu_operations_selector_bit_2_and_gate_3 = ((~alu_opcode_controller[2]) & func_3[2] & (~func_3[1]) & (~func_3[0]));
+    assign alu_operations_selector_bit_2_and_gate_4 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
 
-    logic alu_operations_selector_bit_3_and_gate_1;
-    logic alu_operations_selector_bit_3_and_gate_2;
-    logic alu_operations_selector_bit_3_and_gate_3;
-    logic alu_operations_selector_bit_3_and_gate_4;
-    logic alu_operations_selector_bit_3_and_gate_5;
+    logic alu_operations_selector_bit_1_and_gate_1;
+    logic alu_operations_selector_bit_1_and_gate_2;
+    logic alu_operations_selector_bit_1_and_gate_3;
+    logic alu_operations_selector_bit_1_and_gate_4;
 
-    assign alu_operations_selector_bit_3_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_3[2]) & (~func_3[1]) & func_3[0]);
-    assign alu_operations_selector_bit_3_and_gate_2 = ((~alu_opcode_controller[2]) & (~alu_opcode_controller[0]) & func_3[1] & (~func_3[0]));
-    assign alu_operations_selector_bit_3_and_gate_3 = ((~alu_opcode_controller[1]) & (~alu_opcode_controller[0]) & func_7_bit_6 & (~func_3[1]));
-    assign alu_operations_selector_bit_3_and_gate_4 = ((~alu_opcode_controller[2]) & func_7_bit_6 & (~func_3[1]) & func_3[0]);
-    assign alu_operations_selector_bit_3_and_gate_5 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
-    
-    assign alu_operations_selector[0] = (alu_operations_selector_bit_0_and_gate_1 | alu_operations_selector_bit_0_and_gate_2 | alu_operations_selector_bit_0_and_gate_3);
-    assign alu_operations_selector[1] = (alu_operations_selector_bit_1_and_gate_1 | alu_operations_selector_bit_1_and_gate_2 | alu_operations_selector_bit_1_and_gate_3 | alu_operations_selector_bit_1_and_gate_4);
+    assign alu_operations_selector_bit_1_and_gate_1 = ((~alu_opcode_controller[2]) & (~alu_opcode_controller[0]) & func_3[1] & (~func_3[0]));
+    assign alu_operations_selector_bit_1_and_gate_2 = ((~alu_opcode_controller[2]) & (~func_7_bit_6) & func_3[2] & func_3[0]);
+    assign alu_operations_selector_bit_1_and_gate_3 = ((~alu_opcode_controller[2]) & func_3[2] & func_3[1]);
+    assign alu_operations_selector_bit_1_and_gate_4 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
+
+    logic alu_operations_selector_bit_0_and_gate_1;
+    logic alu_operations_selector_bit_0_and_gate_2;
+    logic alu_operations_selector_bit_0_and_gate_3;
+    logic alu_operations_selector_bit_0_and_gate_4;
+    logic alu_operations_selector_bit_0_and_gate_5;
+
+    assign alu_operations_selector_bit_0_and_gate_1 = ((~alu_opcode_controller[2]) & (~func_3[2]) & (~func_3[1]) & func_3[0]);
+    assign alu_operations_selector_bit_0_and_gate_2 = ((~alu_opcode_controller[2]) & (~alu_opcode_controller[0]) & func_3[1] & (~func_3[0]));
+    assign alu_operations_selector_bit_0_and_gate_3 = ((~alu_opcode_controller[1]) & (~alu_opcode_controller[0]) & func_7_bit_6 & (~func_3[1]));
+    assign alu_operations_selector_bit_0_and_gate_4 = ((~alu_opcode_controller[2]) & func_7_bit_6 & (~func_3[1]) & func_3[0]);
+    assign alu_operations_selector_bit_0_and_gate_5 = (alu_opcode_controller[1] & alu_opcode_controller[0]);
+
+    assign alu_operations_selector[3] = (alu_operations_selector_bit_3_and_gate_1 | alu_operations_selector_bit_3_and_gate_2 | alu_operations_selector_bit_3_and_gate_3);
     assign alu_operations_selector[2] = (alu_operations_selector_bit_2_and_gate_1 | alu_operations_selector_bit_2_and_gate_2 | alu_operations_selector_bit_2_and_gate_3 | alu_operations_selector_bit_2_and_gate_4);
-    assign alu_operations_selector[3] = (alu_operations_selector_bit_3_and_gate_1 | alu_operations_selector_bit_3_and_gate_2 | alu_operations_selector_bit_3_and_gate_3 | alu_operations_selector_bit_3_and_gate_4 | alu_operations_selector_bit_3_and_gate_5);
+    assign alu_operations_selector[1] = (alu_operations_selector_bit_1_and_gate_1 | alu_operations_selector_bit_1_and_gate_2 | alu_operations_selector_bit_1_and_gate_3 | alu_operations_selector_bit_1_and_gate_4);
+    assign alu_operations_selector[0] = (alu_operations_selector_bit_0_and_gate_1 | alu_operations_selector_bit_0_and_gate_2 | alu_operations_selector_bit_0_and_gate_3 | alu_operations_selector_bit_0_and_gate_4 | alu_operations_selector_bit_0_and_gate_5);
 
 endmodule
