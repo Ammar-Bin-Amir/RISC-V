@@ -22,27 +22,6 @@ module control_decoder (
 );
     
     localparam ZERO = 1'b0;
-
-    // ALU Opcode Controller
-    logic [2:0] alu_opcode_controller;
-
-    // ALU Operations Selector
-    logic alu_operations_selector_bit_3_and_gate_1;
-    logic alu_operations_selector_bit_3_and_gate_2;
-    logic alu_operations_selector_bit_3_and_gate_3;
-    logic alu_operations_selector_bit_2_and_gate_1;
-    logic alu_operations_selector_bit_2_and_gate_2;
-    logic alu_operations_selector_bit_2_and_gate_3;
-    logic alu_operations_selector_bit_2_and_gate_4;
-    logic alu_operations_selector_bit_1_and_gate_1;
-    logic alu_operations_selector_bit_1_and_gate_2;
-    logic alu_operations_selector_bit_1_and_gate_3;
-    logic alu_operations_selector_bit_1_and_gate_4;
-    logic alu_operations_selector_bit_0_and_gate_1;
-    logic alu_operations_selector_bit_0_and_gate_2;
-    logic alu_operations_selector_bit_0_and_gate_3;
-    logic alu_operations_selector_bit_0_and_gate_4;
-    logic alu_operations_selector_bit_0_and_gate_5;
     
     // Write
     assign write = (r_type | i_type_lw | i_type_addi | i_type_jalr | u_type_auipc | u_type_lui | uj_type);
