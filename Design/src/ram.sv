@@ -9,7 +9,7 @@ module ram (
     
     reg [31:0] data [0:4095];
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
         if (store) begin
             data[address] <= data_in;
         end
@@ -18,12 +18,12 @@ module ram (
         end
     end
 
-    always @(posedge clk) begin
+    always_ff @(posedge clk) begin
         if (load) begin
             data_out <= data[address];
         end
         else begin
-            data <= data;
+            data_out <= data_out;
         end
     end
 
