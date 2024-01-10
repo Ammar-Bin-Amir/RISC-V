@@ -1,51 +1,33 @@
 module branch_selector (
+    input wire [31:0] rs1,
+    input wire [31:0] rs2,
     input wire en,
     input wire [2:0] func_3,
-    input wire [31:0] rs1_data,
-    input wire [31:0] rs2_data,
     output logic branch_selector
 );
-
-    localparam BEQ = 3'b000;
-    localparam BNE = 3'b001;
-    localparam BLT = 3'b100;
-    localparam BGE = 3'b101;
-    localparam BLTU = 3'b110;
-    localparam BGEU = 3'b111;
-
-    wire signed [31:0] rs1_data_signed;
-    wire signed [31:0] rs2_data_signed;
     
-    assign rs1_data_signed = rs1_data;
-    assign rs2_data_signed = rs2_data;
+    localparam BEQ = 0;
+    localparam BNE = 1;
+    localparam BLT = 4;
+    localparam BGE = 5;
+    localparam BLTU = 6;
+    localparam BGEU = 7;
 
     always_comb begin
         if (en) begin
             case (func_3)
-                BEQ: begin
-                    branch_selector = (rs1_data_signed == rs2_data_signed) ? 1'b1 : 1'b0;
-                end
-                BNE: begin
-                    branch_selector = (rs1_data_signed != rs2_data_signed) ? 1'b1 : 1'b0;
-                end
-                BLT: begin
-                    branch_selector = (rs1_data_signed < rs2_data_signed) ? 1'b1 : 1'b0;
-                end
-                BGE: begin
-                    branch_selector = (rs1_data_signed >= rs2_data_signed) ? 1'b1 : 1'b0;
-                end
-                BLTU: begin
-                    branch_selector = (rs1_data < rs2_data) ? 1'b1 : 1'b0;
-                end
-                BGEU: begin
-                    branch_selector = (rs1_data >= rs2_data) ? 1'b1 : 1'b0;
-                end
-               default: branch_selector = 1'b0;
+                BEQ: branch_selector = (rs1 == rs2) ? 1'b1 : 1'b0;
+                BNE: branch_selector = (rs1 != rs2) ? 1'b1 : 1'b0;
+                BLT: branch_selector = (signed'(rs1) < signed'(rs2)) ? 1'b1 : 1'b0;
+                BGE: branch_selector = (signed'(rs1) >= signed'(rs2)) ? 1'b1 : 1'b0;
+                BLT: branch_selector = (rs1 < rs2) ? 1'b1 : 1'b0;
+                BGE: branch_selector = (rs1 >= rs2) ? 1'b1 : 1'b0;
+                default: branch_selector = 0;
             endcase
         end
         else begin
-            branch_selector = 1'b0;
+            branch_selector = 0;
         end
     end
-    
+
 endmodule
