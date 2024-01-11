@@ -7,7 +7,7 @@ module rom (
 
     // Upload Raw Data
     always_comb begin
-        data[123] = 32'h1234_5678;
+        data[1365] = 32'h7E80_0293;
     end
 
     always_comb begin

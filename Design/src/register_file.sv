@@ -12,8 +12,9 @@ module register_file (
     reg [31:0] data [31:0];
 
     always @(posedge clk) begin
+        data[8] <= 0;               // Checking!
         // Address[0] = ZERO
-        data[0] <= '0;
+        data[0] <= 0;
         // Destination Register
         if (en) begin
             data[rd] <= instruction_memory;
@@ -22,9 +23,19 @@ module register_file (
             data[rd] <= data[rd];
         end
         // Source Register 1
-        rs1_data <= data[rs1_address];
+        if (data[rs1_address] == 32'hxxxx_xxxx) begin
+            rs1_data <= 0;
+        end
+        else begin
+            rs1_data <= data[rs1_address];
+        end
         // Source Register 2
-        rs2_data <= data[rs2_address];
+        if (data[rs2_address] == 32'hxxxx_xxxx) begin
+            rs2_data <= 0;
+        end
+        else begin
+            rs2_data <= data[rs2_address];
+        end
     end
 
 endmodule
