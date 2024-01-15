@@ -12,7 +12,6 @@ module register_file (
     reg [31:0] data [31:0];
 
     always @(posedge clk) begin
-        data[8] <= 0;               // Checking!
         // Address[0] = ZERO
         data[0] <= 0;
         // Destination Register
@@ -23,14 +22,14 @@ module register_file (
             data[rd] <= data[rd];
         end
         // Source Register 1
-        if (data[rs1_address] == 32'hxxxx_xxxx) begin
+        if (data[rs1_address] === 32'hxxxx_xxxx) begin
             rs1_data <= 0;
         end
         else begin
             rs1_data <= data[rs1_address];
         end
         // Source Register 2
-        if (data[rs2_address] == 32'hxxxx_xxxx) begin
+        if (data[rs2_address] === 32'hxxxx_xxxx) begin
             rs2_data <= 0;
         end
         else begin
