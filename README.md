@@ -2,12 +2,14 @@
 
 ## **Description**
 
-This repository is based on RV32I Single Cycle Processor designed on Logisim Simulator which elaborates the RISC-V Data Path of each supported instruction about how they are executed from ROM to RAM.
+This repository is based on RV32I Single Cycle Processor which elaborates the RISC-V Data Path of each supported instruction about how they are executed from ROM to RAM.
 
 ## **Pre-requisites**
 
-- [Logisim](http://www.cburch.com/logisim/download.html) Simulator
 - [Venus](https://venus.cs61c.org/) Simulator
+- Logisim Simulator
+- VS Code Integrated Development Environment
+- Vivado Design Suite
 
 ## **Instructor**
 
