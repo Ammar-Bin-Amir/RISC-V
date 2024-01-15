@@ -17,7 +17,7 @@ module tb_top;
     initial begin
         #10 rst = 1;
         #50 rst = 0;
-        #100 $finish;
+        #1000 $finish;
     end
 
 endmodule
