@@ -1,8 +1,8 @@
 module alu (
-    input wire [31:0] operand_a,
-    input wire [31:0] operand_b,
-    input wire [3:0] alu_operations_selector,
-    output logic [31:0] ram
+    input logic [31:0] operand_a,
+    input logic [31:0] operand_b,
+    input logic [3:0] alu_operations_selector,
+    output logic [31:0] alu_data
 );
     
     localparam ADD = 0;
@@ -19,18 +19,18 @@ module alu (
 
     always_comb begin
         case (alu_operations_selector)
-            ADD: ram = operand_a + operand_b;
-            SUB: ram = operand_a - operand_b;
-            AND: ram = operand_a & operand_b;
-            OR: ram = operand_a | operand_b;
-            XOR: ram = operand_a ^ operand_b;
-            SLL: ram = operand_a << operand_b[4:0];
-            SLR: ram = operand_a >> operand_b[4:0];
-            SLT: ram = (signed'(operand_a) < signed'(operand_b)) ? 1'b1 : 1'b0;
-            SLTU: ram = (operand_a < operand_b) ? 1'b1 : 1'b0;
-            SRA: ram = signed'(operand_a) >>> signed'(operand_b[4:0]);
-            OPERAND_B: ram = operand_b;
-            default: ram = 0;
+            ADD: alu_data = operand_a + operand_b;
+            SUB: alu_data = operand_a - operand_b;
+            AND: alu_data = operand_a & operand_b;
+            OR: alu_data = operand_a | operand_b;
+            XOR: alu_data = operand_a ^ operand_b;
+            SLL: alu_data = operand_a << operand_b[4:0];
+            SLR: alu_data = operand_a >> operand_b[4:0];
+            SLT: alu_data = (signed'(operand_a) < signed'(operand_b)) ? 1'b1 : 1'b0;
+            SLTU: alu_data = (operand_a < operand_b) ? 1'b1 : 1'b0;
+            SRA: alu_data = signed'(operand_a) >>> signed'(operand_b[4:0]);
+            OPERAND_B: alu_data = operand_b;
+            default: alu_data = 0;
         endcase
     end
 

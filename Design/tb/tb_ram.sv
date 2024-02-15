@@ -8,7 +8,7 @@ module tb_ram;
     logic [31:0] data_in;
     logic store;
     logic load;
-    wire [31:0] data_out;
+    logic [31:0] data_out;
 
     ram dut (
         .clk,
@@ -24,6 +24,9 @@ module tb_ram;
     
     initial begin
         #20 address = 0; data_in = 0; store = 0; load = 0;
+        for (integer i = 1; i <= 25; i++) begin
+            #25 address = $random; data_in = $random; store = $random; load = $random;
+        end
         #25 address = 123; data_in = 32'h1234_cdef;
         #50 store = 1;
         #50 load = 1;

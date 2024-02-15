@@ -4,7 +4,7 @@ module tb_rom;
     timeprecision 1ps;
 
     logic [11:0] address;
-    wire [31:0] data_out;
+    logic [31:0] data_out;
 
     rom dut (
         .address,

@@ -6,7 +6,7 @@ module tb_program_counter;
     logic clk;
     logic rst;
     logic [31:0] data_in;
-    wire [31:0] data_out;
+    logic [31:0] data_out;
 
     program_counter dut (
         .clk,

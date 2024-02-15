@@ -5,11 +5,11 @@ module tb_immediate_generator;
 
     logic [31:0] instruction_memory;
     logic [31:0] program_counter;
-    wire [31:0] i_type;
-    wire [31:0] s_type;
-    wire [31:0] sb_type;
-    wire [31:0] u_type;
-    wire [31:0] uj_type;
+    logic [31:0] i_type;
+    logic [31:0] s_type;
+    logic [31:0] sb_type;
+    logic [31:0] u_type;
+    logic [31:0] uj_type;
 
     immediate_generator dut (
         .instruction_memory,

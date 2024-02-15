@@ -13,15 +13,15 @@ module control_unit (
     output logic [3:0] alu_operations_selector
 );
     
-    wire r_type;
-    wire i_type_lw;
-    wire i_type_addi;
-    wire i_type_jalr;
-    wire s_type;
-    wire sb_type;
-    wire u_type_auipc;
-    wire u_type_lui;
-    wire uj_type;
+    logic r_type;
+    logic i_type_lw;
+    logic i_type_addi;
+    logic i_type_jalr;
+    logic s_type;
+    logic sb_type;
+    logic u_type_auipc;
+    logic u_type_lui;
+    logic uj_type;
     
     type_decoder dut_type_decoder (
         .opcode (opcode),

@@ -6,13 +6,13 @@ module tb_alu;
     logic [31:0] operand_a;
     logic [31:0] operand_b;
     logic [3:0] alu_operations_selector;
-    wire [31:0] ram;
+    logic [31:0] alu_data;
 
     alu dut (
         .operand_a,
         .operand_b,
         .alu_operations_selector,
-        .ram
+        .alu_data
     );
 
     initial begin

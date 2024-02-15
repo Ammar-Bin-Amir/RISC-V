@@ -1,6 +1,6 @@
 module immediate_generator (
-    input wire [31:0] instruction_memory,
-    input wire [31:0] program_counter,
+    input logic [31:0] instruction_memory,
+    input logic [31:0] program_counter,
     output logic [31:0] i_type,
     output logic [31:0] s_type,
     output logic [31:0] sb_type,

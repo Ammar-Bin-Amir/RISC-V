@@ -1,9 +1,9 @@
 module ram (
-    input wire clk,
-    input wire [11:0] address,
-    input wire [31:0] data_in,
-    input wire store,
-    input wire load,
+    input logic clk,
+    input logic [11:0] address,
+    input logic [31:0] data_in,
+    input logic store,
+    input logic load,
     output logic [31:0] data_out
 );
     
@@ -18,12 +18,17 @@ module ram (
         end
     end
 
-    always_ff @(posedge clk) begin
+    always_comb begin
         if (load) begin
-            data_out <= data[address];
+            if (data[address] === 32'hxxxx_xxxx) begin
+                data_out = 0;
+            end
+            else begin
+                data_out = data[address];
+            end
         end
         else begin
-            data_out <= data_out;
+            data_out = data_out;
         end
     end
 

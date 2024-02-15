@@ -1,8 +1,8 @@
 module branch_selector (
-    input wire [31:0] rs1,
-    input wire [31:0] rs2,
-    input wire en,
-    input wire [2:0] func_3,
+    input logic [31:0] rs1,
+    input logic [31:0] rs2,
+    input logic en,
+    input logic [2:0] func_3,
     output logic branch_selector
 );
 

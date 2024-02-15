@@ -1,7 +1,7 @@
 module program_counter (
-    input wire clk,
-    input wire rst,
-    input wire [31:0] data_in,
+    input logic clk,
+    input logic rst,
+    input logic [31:0] data_in,
     output logic [31:0] data_out
 );
     

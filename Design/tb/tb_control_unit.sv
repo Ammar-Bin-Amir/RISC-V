@@ -51,7 +51,7 @@ module tb_control_unit;
         end
         #10 opcode = 7'h13; func_7_bit_6 = 0; func_3 = 0;
         for (integer i = 1; i <= 8; i++) begin
-            func_3 = i;
+            #10 func_3 = i;
         end
         #10 opcode = 7'h13; func_7_bit_6 = 1; func_3 = 0;
         for (integer i = 1; i <= 8; i++) begin

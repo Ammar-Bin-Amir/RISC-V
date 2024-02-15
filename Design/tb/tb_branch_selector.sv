@@ -7,7 +7,7 @@ module tb_branch_selector;
     logic [31:0] rs2;
     logic en;
     logic [2:0] func_3;
-    wire branch_selector;
+    logic branch_selector;
 
     branch_selector dut (
         .rs1,
