@@ -1,7 +1,4 @@
 module tb_immediate_generator;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic [31:0] instruction_memory;
     logic [31:0] program_counter;
@@ -25,6 +22,11 @@ module tb_immediate_generator;
         #10 instruction_memory = 32'hFDB9_7531; program_counter = 32'hECA8_6420;
         #50 instruction_memory = $random; program_counter = $random;
         #100 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_immediate_generator.vcd");
+        $dumpvars();
     end
 
 endmodule

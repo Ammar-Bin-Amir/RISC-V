@@ -1,8 +1,5 @@
 module tb_rom;
 
-    timeunit 1ns;
-    timeprecision 1ps;
-
     logic [11:0] address;
     logic [31:0] data_out;
 
@@ -14,6 +11,11 @@ module tb_rom;
     initial begin
         #10 address = 123;
         #50 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_rom.vcd");
+        $dumpvars();
     end
     
 endmodule

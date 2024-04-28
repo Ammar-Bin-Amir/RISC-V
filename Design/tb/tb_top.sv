@@ -1,7 +1,4 @@
 module tb_top;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic rst;
@@ -18,6 +15,11 @@ module tb_top;
         #10 rst = 1;
         #50 rst = 0;
         #1000 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump.vcd");
+        $dumpvars();
     end
 
 endmodule

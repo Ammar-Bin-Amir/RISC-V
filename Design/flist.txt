@@ -1,0 +1,10 @@
+src/program_counter.sv
+src/rom.sv
+src/type_decoder.sv
+src/control_decoder.sv
+src/control_unit.sv
+src/register_file.sv
+src/immediate_generator.sv
+src/alu.sv
+src/ram.sv
+src/branch_selector.sv

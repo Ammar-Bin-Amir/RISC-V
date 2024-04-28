@@ -1,2 +1,10 @@
-Testing
-
+*.jou
+*.log
+*.pb
+.*.timestamp
+*.wdb
+*.wcfg
+*.str
+xsim.dir
+.Xil
+temp

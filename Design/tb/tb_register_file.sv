@@ -1,8 +1,5 @@
 module tb_register_file;
     
-    timeunit 1ns;
-    timeprecision 1ps;
-    
     logic clk;
     logic en;
     logic [31:0] register_file_data;
@@ -36,6 +33,11 @@ module tb_register_file;
         #25 en = 1; register_file_data = $random; rd = 5'hff; rs1_address = 0; rs2_address = 5'hff;
         #25 en = 1; register_file_data = $random; rd = 5'hff; rs1_address = 5'hff; rs2_address = 5'hff;
         #100 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_register_file.vcd");
+        $dumpvars();
     end
 
 endmodule

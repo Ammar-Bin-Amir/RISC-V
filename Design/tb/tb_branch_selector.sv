@@ -1,8 +1,5 @@
 module tb_branch_selector;
     
-    timeunit 1ns;
-    timeprecision 1ps;
-    
     logic [31:0] rs1;
     logic [31:0] rs2;
     logic en;
@@ -26,6 +23,11 @@ module tb_branch_selector;
             #10 en = $random; rs1 = $random; rs2 = $random; func_3 = i;
         end
         #100 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_branch_selector.vcd");
+        $dumpvars();
     end
 
 endmodule

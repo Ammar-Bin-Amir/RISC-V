@@ -1,7 +1,4 @@
 module tb_program_counter;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic rst;
@@ -23,6 +20,11 @@ module tb_program_counter;
             #25 rst = $random; data_in = $random;
         end
         #10 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_program_counter.vcd");
+        $dumpvars();
     end
 
 endmodule

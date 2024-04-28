@@ -1,7 +1,4 @@
 module tb_ram;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic [11:0] address;
@@ -32,6 +29,11 @@ module tb_ram;
         #50 load = 1;
         #10 address = 12'hfff; data_in = 32'hffff_ffff; store = 1; load = 1;
         #100 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_ram.vcd");
+        $dumpvars();
     end
 
 endmodule
